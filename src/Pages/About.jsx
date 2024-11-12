@@ -1,243 +1,123 @@
-import React from 'react'
+import React from 'react';
+import CountUp from 'react-countup';
 
-const About = () => {
-  return (
-    <>
-    <div>
-      <div className="container">
-        <div className="menu_row">
-          <h2 className=' text-2xl font-bold text-black mt-10'>About Me.</h2>
-          <h2 className=' w-[200px] h-[3px] border border-solid bg-gray-400 ml-[150px] mt-[-9px]'></h2>
-         <p className=' w-[500px] h-[1200px] mt-[50px] text-gray-500 hover:text-black animate-pulse font-bold transition'> I’m Jahidul Islam, a front-end developer with a strong foundation in HTML, CSS, and JavaScript. I specialize in React, creating dynamic and interactive user interfaces. My experience includes using React Router DOM for efficient navigation and Bootstrap for building responsive, mobile-first designs. I’m adept at working with APIs to integrate external data into applications. Version control with Git and GitHub is part of my daily workflow, ensuring smooth collaboration and code management. I’ve worked on projects like a chat application, applying my development skills in real-world scenarios. Additionally, I use Figma to design intuitive and visually appealing web layouts.</p>
+const AboutSection = () => (
+  <div className="about-section container mt-5 px-4 sm:px-6 md:px-8 lg:px-16">
+    <h2 className="text-2xl font-bold text-[#4f4f4f] mt-[50px] text-center sm:text-left flex justify-center items-center pt-10 ">About Me</h2>
+    <h3 className="absolute border-2 border-[#4f4f4f] w-[150px] sm:w-[200px] flex justify-center items-center mt-[10px]"></h3>
+
+    <div className="divider bg-[#4f4f4f] mt-2 mb-4"></div>
+  
+    <div className="mt-[30px] sm:mt-[80px] px-4 sm:px-6 text-sm sm:text-base space-y-4">
+      {[ 
+        { label: 'Name', value: 'Jahidul Islam' },
+        { label: 'Nationality', value: 'Bangladesh' },
+        { label: 'Phone', value: '+8801540587085' },
+        { label: 'Email', value: 'jahidulislamwebbd@gmail.com' },
+        { label: 'Experience', value: '2+ years' },
+        { label: 'Freelance', value: 'Available' },
+        { label: 'Skype', value: 'jahidul.islam' },
+        { label: 'Language', value: 'Bangla, English' }
+      ].map((item, index) => (
+        <div key={index} className="flex space-x-2 sm:space-x-3 flex-wrap">
+          <span className="font-bold text-slate-700">{item.label}</span>
+          <span>{`: ${item.value}`}</span>
         </div>
-        <div className=' mt-[-1210px] ml-[650px]'>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'>name</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'>Nationality</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'>Phone</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'>Email</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'>Experience</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'>Freelance</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'>Skype</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'>Language</h2>
+      ))}
+    </div>
 
-            
-           </div>
-           <div className=' ml-[870px] mt-[-260px]'>
-          
-         <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'> :  jahidul islam </h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'> :  bangladesh</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'> :  +01540587085</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'> :  jahidulislamwebbd@gmail.com</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'> :  3 + years</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'> :  Available</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'> :  jahidul islam</h2>
-          <h2 className=' text-[16px] text-black uppercase font-bold hover:text-gray-500 animate-pulse mt-2'> :  english</h2>
-            
-         </div>
-         </div>
-         
+    <div className="flex justify-center sm:justify-start items-center mt-4 sm:mt-[40px]">
+      <p className="text-[#4f4f4f] mx-auto sm:mx-0 max-w-full sm:max-w-2xl lg:max-w-3xl xl:max-w-4xl leading-relaxed text-center sm:text-left">
+        I am currently pursuing a Bachelor's degree in Social Science at Habiganj Govt <br />
+        College, Bangladesh. I completed my Higher Secondary Certificate (HSC) in <br /> 
+        Humanities at Kabir College Academy in 2023. I also earned my Secondary <br />
+        School Certificate (SSC) in Commerce from Hazrat Shahjala High School in <br />
+        2021. My academic background fuels my passion for learning and growth.
+      </p>
+    </div>
+  </div>
+);
+
+const EducationSection = () => (
+  <div className="education-section container mt-[50px] px-4 sm:px-6 lg:px-16">
+    <h2 className="text-2xl font-bold text-[#4f4f4f] pt-10 text-center sm:text-left mt-[120px] ">Education</h2>
+    <div className="divider bg-slate-400 mt-2 mb-4"></div>
+    
+    {[ 
+      { year: 'Degree Running Student Bachelor of Social Science -2024', title: 'Brindhabon Govt College Habiganj', description: 'Jahidul Islam is a student at Habiganj Govt College, pursuing a Bachelors degree in Social Science with a focus on (Humanities). He began his studies in 2025.' },
+      { year: 'Higher Secondary Certificate. -2023', title: 'Kabir College Academy', description: 'Jahidul Islam completed his Higher Secondary Certificate (HSC) in (Humanities) at Habiganj Kabir College Academy in 2023.' },
+      { year: 'Secondary School Certificate -2021', title: 'Hazrat Shahjala High School Baniachong , Habiganj', description: 'Jahidul Islam completed his Secondary School Certificate (SSC) in (Commerce) at Hazrat Shahjala (Ra.) High School, Baniachong, Habiganj, in 2021.' }
+    ].map((edu, index) => (
+      <div key={index} className="education-item mt-12">
+        <div className="year bg-slate-700 py-2 px-4 text-white">{edu.year}</div>
+        <h3 className="title font-bold text-lg mt-2">{edu.title}</h3>
+        <p className="description text-sm mt-2">{edu.description}</p>
       </div>
-      <div className="container">
-        <div className="heder">
-          <h2 className=' text-[32px] font-bold mt-16'> Education.</h2>
-          <h3 className=' w-[300px] h-[3px] border border-solid bg-slate-400 mt-[-13px] ml-[170px]'></h3>
-          <div className=' w-[10px] h-[10px] bg-[#F02A71] rounded-full mt-12 relative'>
-           <h2 className=' w-[2px] h-[130px] bg-gray-600 absolute ml-1 mt-[9px]'></h2>
-           <div className=''>
-            <h2 className=' font-bold mt-[-5px] ml-[30px] w-[80px] h-[20px] bg-slate-700 hover:bg-[#fff] transition-shadow flex justify-center items-center rounded-full'> 2024</h2>
-            <h2 className=' w-[300px] mt-5 font-bold text-black ml-8 tex-[16px] hover:text-gray-600'> BSS-Degree Runing Student</h2>
-            <p className=' w-[400px] ml-8 mt-5 hover:text-[#F2FECA] transition'> Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
-            adipisicing elit,</p>
-           </div>
-          </div>
+    ))}
+  </div>
+);
 
-          <div className=' mt-[150px]'>
-          <h2 className=' text-[32px] font-bold mt-16'> </h2>
-          <div className=' w-[10px] h-[10px] bg-[#F02A71] rounded-full mt-12 relative'>
-           <h2 className=' w-[2px] h-[130px] bg-gray-600 absolute ml-1 mt-[9px]'></h2>
-           <div className=''>
-            <h2 className=' font-bold mt-[-5px] ml-[30px] w-[80px] h-[20px] bg-slate-700 hover:bg-[#fff] transition-shadow flex justify-center items-center rounded-full'> 2023</h2>
-            <h2 className=' w-[300px] mt-5 font-bold text-black ml-8 tex-[16px] hover:text-gray-600'> Hsc-Kabir Colleged Academy Habigonj</h2>
-            <p className=' w-[400px] ml-8 mt-5 hover:text-[#F2FECA] transition'> Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
-            adipisicing elit,</p>
-           </div>
-          </div>
-
-          </div>
-
-
-        <div className=' mt-[150px]'>
-        <h2 className=' text-[32px] font-bold mt-16'></h2>
-          <div className=' w-[10px] h-[10px] bg-[#F02A71] rounded-full mt-12 relative'>
-           <h2 className=' w-[2px] h-[130px] bg-gray-600 absolute ml-1 mt-[9px]'></h2>
-            <h2 className=' font-bold mt-[-5px] ml-[30px] w-[80px] h-[20px] bg-slate-700 hover:bg-[#fff] transition-shadow flex justify-center items-center rounded-full'> 2021</h2>
-            <h2 className=' w-[300px] mt-5 font-bold text-black ml-8 tex-[16px] hover:text-gray-600'>Ssc-Hazrat Shahjala (Ra..) High School</h2>
-            <p className=' w-[400px] ml-8 mt-5 hover:text-[#F2FECA] transition'> Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
-            adipisicing elit,</p>
-           </div>
-          </div>
-          <div className=' mt-[-460px] ml-[750px]'>
-          <h2 className=' text-[32px] font-bold mt-16'> Experience.</h2>
-          <h3 className=' w-[300px] h-[3px] border border-solid bg-slate-400 mt-[-13px] ml-[180px]'></h3>
-          <div className=' w-[10px] h-[10px] bg-[#F02A71] rounded-full mt-12 relative'>
-           <h2 className=' w-[2px] h-[130px] bg-gray-600 absolute ml-1 mt-[9px]'></h2>
-           <div className=''>
-            <h2 className=' font-bold mt-[-5px] ml-[30px] w-[150px] h-[24px] bg-slate-700 hover:bg-[#fff] transition-shadow flex justify-center items-center rounded-full'> 2022-present</h2>
-            <h2 className=' w-[300px] mt-5 font-bold text-black ml-8 tex-[16px] hover:text-gray-600'> React - Developer</h2>
-            <p className=' w-[400px] ml-8 mt-5 hover:text-[#F2FECA] transition'> Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
-            adipisicing elit,</p>
-           </div>
-          </div>
-          <div className=' mt-[150px]'>
-          <h2 className=' text-[32px] font-bold mt-16'> </h2>
-          <div className=' w-[10px] h-[10px] bg-[#F02A71] rounded-full mt-12 relative'>
-           <h2 className=' w-[2px] h-[130px] bg-gray-600 absolute ml-1 mt-[9px]'></h2>
-           <div className=''>
-            <h2 className=' font-bold mt-[-5px] ml-[30px] w-[150px] h-[24px] bg-slate-700 hover:bg-[#fff] transition-shadow flex justify-center items-center rounded-full'> 2023-present</h2>
-            <h2 className=' w-[300px] mt-5 font-bold text-black ml-8 tex-[16px] hover:text-gray-600'> Data Entry</h2>
-            <p className=' w-[400px] ml-8 mt-5 hover:text-[#F2FECA] transition'> Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
-            adipisicing elit,</p>
-           </div>
-          </div>
-          </div>
-          <div className=' mt-[150px]'>
-        <h2 className=' text-[32px] font-bold mt-16'></h2>
-          <div className=' w-[10px] h-[10px] bg-[#F02A71] rounded-full mt-12 relative'>
-           <h2 className=' w-[2px] h-[130px] bg-gray-600 absolute ml-1 mt-[9px]'></h2>
-            <h2 className=' font-bold mt-[-5px] ml-[30px] w-[150px] h-[24px] bg-slate-700 hover:bg-[#fff] transition-shadow flex justify-center items-center rounded-full'> 2021-present</h2>
-            <h2 className=' w-[300px] mt-5 font-bold text-black ml-8 tex-[16px] hover:text-gray-600'>Front end developer</h2>
-            <p className=' w-[400px] ml-8 mt-5 hover:text-[#F2FECA] transition'> Lorem ipsum dolor sit amet, consectetur tempor incididunt ut labore
-            adipisicing elit,</p>
-           </div>
-          </div>  
-          </div>
-       </div> 
-        </div>
-       <div className="container">
-        <div className="hedes">
-        <div className=" flex justify-center items-center ">
-        <h4 className=' text-2xl font-bold mt-[200px]'> Coding Skills.</h4>
-        <h3 className='  w-[300px] h-[3px] border border-solid bg-slate-400 mt-[217px] ml-[5px]'></h3>
-        </div>
-
-        
-        </div>
-        </div>
-        <div className="container">
- <div className="row_head flex justify-center items-center">
- <h4 className=' text-3xl text-yellow-50 font-bold mt-[120px]'> <marquee>MY SKILLS</marquee></h4>
-      
- </div>
- <div className="round mt-8">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px] hover:bg-white rounded-full flex justify-center items-center ml-48'>100%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-10  hover:text-gray-900'>HTML5</h3>
- <div className="round2 ml-[230px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px] hover:bg-white rounded-full flex justify-center items-center ml-48 '>90%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-10  hover:text-gray-900'>CSS-3</h3>
- </div>
- <div className="round3 ml-[450px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px] hover:bg-white rounded-full flex justify-center items-center ml-48'>67%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>Javascript</h3>
- </div>
- <div className="round4 ml-[690px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px] hover:bg-white rounded-full flex justify-center items-center ml-48'>70%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>Jquery</h3>
- </div>
- <div className="round5 mt-12">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px] hover:bg-white rounded-full flex justify-center items-center ml-48'>65%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>Bootstrap</h3>
-
- <div className="round6 ml-[230px] mt-[-161px]"> 
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px] hover:bg-white rounded-full flex justify-center items-center ml-48'>100%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>Figma</h3>
- <div className="round7 ml-[230px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px] hover:bg-white rounded-full flex justify-center items-center ml-48'>75%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>Talwind-css</h3>
-
- <div className="round8 ml-[230px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px]  hover:bg-white rounded-full flex justify-center items-center ml-48'>65%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>React Redux</h3>
- </div>
+const ExperienceSection = () => (
+  <div className="experience-section container mt-[20px] px-4 sm:px-6 lg:px-16">
+    <h2 className="text-2xl font-bold text-[#4f4f4f] text-center sm:text-left">Experience</h2>
+    <div className="divider bg-slate-400 mt-2 mb-4"></div>
     
- </div>
-       
- </div>
- <div className="round9 mt-12">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px]  hover:bg-white rounded-full flex justify-center items-center ml-48'>80%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>React Router Dom</h3>
-
- <div className="round10 ml-[230px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px]  hover:bg-white rounded-full flex justify-center items-center ml-48'>85%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>Api</h3>
-
- <div className="round11 ml-[230px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px]  hover:bg-white rounded-full flex justify-center items-center ml-48'>75%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>Git & Github</h3>
-
- <div className="round12 ml-[230px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px]  hover:bg-white rounded-full flex justify-center items-center ml-48'>72%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>Slick Slider</h3>
-
- </div>
- </div>
- </div>
- <div className="round13 mt-12">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px]  hover:bg-white rounded-full flex justify-center items-center ml-48'>80%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>Firebase</h3>
-       
- <div className="round14 ml-[230px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px]  hover:bg-white rounded-full flex justify-center items-center ml-48'>78</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>java</h3>
- 
- <div className="round15 ml-[230px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px]  hover:bg-white rounded-full flex justify-center items-center ml-48'>78%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8  hover:text-gray-900'>Framework</h3>
-
- <div className="round16  ml-[230px] mt-[-161px]">
- <h2 className=' text- border-2 border-solid text-yellow-300 -300 w-[100px] h-[100px]  hover:bg-white rounded-full flex justify-center items-center ml-48'>82%</h2>
- <h3 className=' text-yellow-50 ml-[215px] mt-8 hover:text-gray-900'>ChetingApp</h3>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- </div>
- <div className="container">
-  <div className="hade mt-[100px]">
-  <h2 className=' flex justify-center items-center text-2xl font-bold hover:text-gray-400'> Design Skills.</h2>
-  <h3 className='  w-[300px] h-[3px] border border-solid bg-slate-400 ml-[740px] mt-[-5px]'></h3>
- 
-  <div className=' w-[250px] h-[100px] border-2 border-solid rounded-full bg-[#45FFCA] mt-[150px] flex hover:bg-[#00712D]'>
-  <img className=' w-[100px] h-[100px] p-5 rounded-full animate-spin' src=" https://th.bing.com/th?id=OIP.rp-wXdJ_dxEcWWFSu2L5VAHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="img" />
-  <h2 className=' text-[20px] font-bold pt-5'> 80%  <br />HTML, CSS</h2>
+    {[ 
+      { period: 'Creative It Institute Uttara Dhaka Bangladesh -2024', title: 'Frontend Developer with React', description: 'As a Frontend Developer specializing in React, Jahidul Islam has experience with various web technologies including React, Redux, Tailwind CSS, Bootstrap, and Firebase.' },
+      { period: 'Creative It Institute Uttara Dhaka Bangladesh -2024', title: 'Node.Js', description: 'Jahidul Islam is currently learning Node.js at Creative IT Institute.' },
+    ].map((exp, index) => (
+      <div key={index} className="experience-item mt-12">
+        <div className="period bg-slate-700 py-2 px-4 text-white">{exp.period}</div>
+        <h3 className="title font-bold text-lg mt-2">{exp.title}</h3>
+        <p className="description text-sm mt-2">{exp.description}</p>
+      </div>
+    ))}
   </div>
-  </div>
+);
 
-  <div className="hade mt-[-140px] ml-[330px]">
-  <div className=' w-[250px] h-[100px] border-2 border-solid rounded-full bg-[#45FFCA] mt-10 flex hover:bg-[#00712D]'>
-  <img className=' w-[100px] h-[100px] p-5 rounded-full animate-spin' src=" https://th.bing.com/th?id=OIP.QOkylm9J0MPdkVUnQGLxZwHaHa&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="img" />
-  <h2 className=' text-[20px] font-bold pt-5'> 45%  <br />photoshop</h2>
+const SkillSection = () => (
+  <div className="skill-section container mt-16 px-4 sm:px-6 lg:px-16">
+    <div className="flex justify-center items-center relative mb-4">
+      <h2 className="absolute text-2xl font-bold text-[#4f4f4f] mt-7 text-center sm:text-left">Coding Skills</h2>
+      <h3 className="absolute border-2 border-[#4f4f4f] w-[150px] sm:w-[200px] mt-[90px]"></h3>
+    </div>
+    <div className="divider bg-slate-400 mt-[100px] mb-8"></div>
+    <div className="skills grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 mt-[40px] sm:mt-16">
+      {[ 
+        { name: 'HTML5', proficiency: 90 },
+        { name: 'CSS3', proficiency: 90 },
+        { name: 'JavaScript', proficiency: 67 },
+        { name: 'jQuery', proficiency: 70 },
+        { name: 'Bootstrap', proficiency: 65 },
+        { name: 'Figma', proficiency: 100 },
+        { name: 'Tailwind CSS', proficiency: 75 },
+        { name: 'React Redux', proficiency: 65 },
+        { name: 'React Router DOM', proficiency: 80 },
+        { name: 'API', proficiency: 85 },
+        { name: 'Git & GitHub', proficiency: 85 },
+        { name: 'Slick Slider', proficiency: 72 },
+        { name: 'Firebase', proficiency: 68 },
+        { name: 'Java', proficiency: 78 }
+      ].map((skill, index) => (
+        <div key={index} className="skill-item text-center transform transition duration-300 hover:scale-110">
+          <div className="proficiency-circle relative inline-block w-24 h-24 sm:w-32 sm:h-32 lg:w-40 lg:h-40 rounded-full border-4 border-[#FF204E] box-shadow-md bg-transparent flex justify-center items-center overflow-hidden transform transition duration-500 hover:bg-[#FF204E] hover:text-white">
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-pink-500 opacity-30"></div>
+            <CountUp end={skill.proficiency} suffix="%" duration={2} className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#FF204E] z-10"/>
+          </div>
+          <p className="skill-name mt-2 text-sm sm:text-base text-[#4f4f4f]">{skill.name}</p>
+        </div>
+      ))}
+    </div>
   </div>
-  </div>
+);
 
-  <div className="hade mt-[-140px] ml-[680px]">
-  <div className=' w-[250px] h-[100px] border-2 border-solid rounded-full bg-[#45FFCA] mt-10 flex hover:bg-[#00712D]'>
-  <img className=' w-[100px] h-[100px] p-5 rounded-full animate-spin' src=" https://www.freepnglogos.com/uploads/google-slides/google-slides-download-hd-picture-6.jpg" alt="img" />
-  <h2 className=' text-[20px] font-bold pt-5'> 70%  <br />Google slide</h2>
+const MainComponent = () => (
+  <div className="main-container">
+    <AboutSection />
+    <EducationSection />
+    <ExperienceSection />
+    <SkillSection />
   </div>
-  </div>
-  <div className="hade mt-[-140px] ml-[1000px]">
-  <div className=' w-[250px] h-[100px] border-2 border-solid rounded-full bg-[#45FFCA] mt-10 flex hover:bg-[#00712D]'>
-  <img className=' w-[100px] h-[100px] p-5 rounded-full animate-spin' src=" https://th.bing.com/th?id=OIP.q5KTaRu6vZ21E7x62730kAAAAA&w=250&h=250&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="img" />
-  <h2 className=' text-[20px] font-bold pt-5'> 56%  <br />Bloger</h2>
-  </div>
-  </div>
- </div>
-    </>
-    
-  )
-}
+);
 
-export default About
+export default MainComponent;
