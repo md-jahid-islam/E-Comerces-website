@@ -11,13 +11,15 @@
  const mainroute = createBrowserRouter(
  createRoutesFromElements(
  <Route>
- <Route path='/' element = {<LayoutOne/>} >
+ <Route path='/' element ={<LayoutOne/>} >
  <Route path='/home' element = {<Home/>} />
  <Route path='/about' element = {<About/>} />
  <Route path='/portfolio' element = {<Portfolio/>} />
  <Route path='/blog' element = {<Blog/>} />
  <Route path='/services' element = {<Services/>} />
  <Route path='/contact' element = {<Contact/>} /> 
+ 
+ 
  </Route>
  </Route>
  )
