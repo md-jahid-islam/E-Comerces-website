@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Typewriter from 'typewriter-effect';
-
 const ProjectCard = ({ image, title, category, liveLink, githubLink }) => (
   <div className="relative text-center w-72 transform hover:scale-105 transition duration-300">
     <img

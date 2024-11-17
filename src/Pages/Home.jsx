@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Typewriter from 'typewriter-effect';
-import { FaGithub, FaLinkedin } from "react-icons/fa";
-import { BsFacebook } from 'react-icons/bs';
-import { div } from 'framer-motion/client';
+ import React, { useState, useEffect } from 'react';
+ import { Link } from 'react-router-dom';
+ import Typewriter from 'typewriter-effect';
+ import { FaGithub, FaLinkedin } from "react-icons/fa";
+ import { BsFacebook } from 'react-icons/bs';
 
-const Home = () => {
+ const Home = () => {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
@@ -28,7 +27,6 @@ const Home = () => {
       localStorage.setItem('theme', 'light');
     }
   };
-
   return (
     <>
     <div className='container bg-gray-900'>

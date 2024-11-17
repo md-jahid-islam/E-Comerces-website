@@ -38,7 +38,7 @@ const Blog = () => {
               Est a quis ipsum et arcu. Sit eros leo enim sed vivamus. Nulla et eget
               commodo mus suspendisse imperdiet.
             </p>
-          </div>
+          </div> 
 
           <div
             data-aos="zoom-in"
